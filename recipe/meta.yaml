@@ -19,8 +19,8 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - dill >=0.3.3
-    - pox >=0.2.9
+    - dill >=0.3.4
+    - pox >=0.3.0
 
 test:
   requires:
