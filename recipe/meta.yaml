@@ -1,4 +1,4 @@
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: klepto
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/uqfoundation/klepto/archive/klepto-{{ version }}.tar.gz
-  sha256: 36af91aeaef0f1845355e3ae4bb015a5cf59e669b6191501bb74322ef18b8481
+  sha256: 5aaa85a9cf75d53031f40080aed3d6807789b909252dae7a6c1cb7bac8eb7939
 
 build:
   noarch: python
