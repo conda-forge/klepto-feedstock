@@ -19,14 +19,16 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - dill >=0.3.6
-    - pox >=0.3.2
+    - dill >=0.3.7
+    - pox >=0.3.3
 
 test:
   requires:
     - pytest
     # also test the optional dependencies
+    - cloudpickle
     - h5py
+    - jsonpickle
     - pandas
     - sqlalchemy
   imports:
