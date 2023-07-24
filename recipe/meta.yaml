@@ -1,4 +1,4 @@
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
   name: klepto
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/uqfoundation/klepto/archive/klepto-{{ version }}.tar.gz
-  sha256: 5aaa85a9cf75d53031f40080aed3d6807789b909252dae7a6c1cb7bac8eb7939
+  sha256: 9664f4793e0b61962c9adf46454ff83a578a474aa5b17840af3a9d91ffe81283
 
 build:
   noarch: python
@@ -19,14 +19,16 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - dill >=0.3.6
-    - pox >=0.3.2
+    - dill >=0.3.7
+    - pox >=0.3.3
 
 test:
   requires:
     - pytest
     # also test the optional dependencies
+    - cloudpickle
     - h5py
+    - jsonpickle
     - pandas
     - sqlalchemy
   imports:
