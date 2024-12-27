@@ -10,16 +10,16 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - dill >=0.3.8
     - pox >=0.3.4
 
@@ -32,6 +32,7 @@ test:
     - jsonpickle
     - pandas
     - sqlalchemy
+    - python {{ python_min }}
   imports:
     - klepto
     - klepto.archives
