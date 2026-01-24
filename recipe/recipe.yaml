@@ -1,0 +1,59 @@
+schema_version: 1
+
+context:
+  version: 0.2.8
+
+package:
+  name: klepto
+  version: ${{ version }}
+
+source:
+  url: https://github.com/uqfoundation/klepto/archive/refs/tags/${{ version }}.tar.gz
+  sha256: d0131469913fb939d105961c1ef0e280ddd1e11565b9703acc3b7584780b48c7
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - dill >=0.4.1
+    - pox >=0.3.7
+
+tests:
+  - python:
+      imports:
+        - klepto
+        - klepto.archives
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pytest
+        - cloudpickle
+        - h5py
+        - jsonpickle
+        - pandas
+        - sqlalchemy
+        - python ${{ python_min }}
+    script:
+      - python -m klepto.tests
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: persistent caching to memory, disk, or database
+  homepage: https://github.com/uqfoundation/klepto
+  repository: https://github.com/uqfoundation/klepto
+  documentation: http://klepto.rtfd.io/
+
+extra:
+  recipe-maintainers:
+    - thewchan
+    - h-vetinari
