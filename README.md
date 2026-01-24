@@ -148,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@h-vetinari](https://github.com/h-vetinari/)
+* [@thewchan](https://github.com/thewchan/)
 
