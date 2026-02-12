@@ -41,7 +41,7 @@ tests:
         - jsonpickle
         - pandas
         - sqlalchemy
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
     script:
       - python -m klepto.tests
 
